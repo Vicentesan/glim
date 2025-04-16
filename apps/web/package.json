@@ -1,28 +1,26 @@
 {
-  "name": "web",
-  "version": "0.1.0",
+  "name": "@glim/web",
+  "private": false,
+  "sideEffects": false,
   "type": "module",
-  "private": true,
   "scripts": {
-    "dev": "next dev --turbopack --port 3000",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint --max-warnings 0",
-    "check-types": "tsc --noEmit"
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start"
   },
   "dependencies": {
-    "@repo/ui": "*",
-    "next": "^15.3.0",
+    "@tanstack/react-router": "^1.116.0",
+    "@tanstack/react-start": "^1.116.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "vinxi": "^0.5.4"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
-    "@types/node": "^22.14.0",
-    "@types/react": "19.1.0",
-    "@types/react-dom": "19.1.1",
-    "eslint": "^9.24.0",
-    "typescript": "5.8.2"
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.0",
+    "typescript": "^5.8.3",
+    "vite-plugin-top-level-await": "^1.5.0",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
