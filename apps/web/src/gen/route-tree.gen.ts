@@ -11,13 +11,13 @@
 // Import Routes
 
 import { Route as rootRoute } from './../routes/__root'
-import { Route as IndexImport } from './../routes/index'
+import { Route as PageImport } from './../routes/page'
 
 // Create/Update Routes
 
-const IndexRoute = IndexImport.update({
-  id: '/index',
-  path: '/index',
+const PageRoute = PageImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -25,11 +25,11 @@ const IndexRoute = IndexImport.update({
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/index': {
-      id: '/index'
-      path: '/index'
-      fullPath: '/index'
-      preLoaderRoute: typeof IndexImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof PageImport
       parentRoute: typeof rootRoute
     }
   }
@@ -38,33 +38,33 @@ declare module '@tanstack/react-router' {
 // Create and export the route tree
 
 export interface FileRoutesByFullPath {
-  '/index': typeof IndexRoute
+  '/': typeof PageRoute
 }
 
 export interface FileRoutesByTo {
-  '/index': typeof IndexRoute
+  '/': typeof PageRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
-  '/index': typeof IndexRoute
+  '/': typeof PageRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/index'
+  fullPaths: '/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/index'
-  id: '__root__' | '/index'
+  to: '/'
+  id: '__root__' | '/'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  PageRoute: typeof PageRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  PageRoute: PageRoute,
 }
 
 export const routeTree = rootRoute
@@ -77,11 +77,11 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/index"
+        "/"
       ]
     },
-    "/index": {
-      "filePath": "index.tsx"
+    "/": {
+      "filePath": "page.tsx"
     }
   }
 }

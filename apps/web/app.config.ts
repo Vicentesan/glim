@@ -1,6 +1,6 @@
 import { defineConfig } from '@tanstack/react-start/config'
-import tsConfigPaths from 'vite-tsconfig-paths'
 import topLevelAwait from 'vite-plugin-top-level-await'
+import tsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
   vite: {
