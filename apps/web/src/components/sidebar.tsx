@@ -9,6 +9,8 @@ import { InboxIcon } from './icons/inbox-icon'
 import { SettingsIcon } from './icons/settings-icon'
 import { Button } from './ui/button'
 
+import UiSidebarLink from './ui/sidebar-link';
+
 type NavigationItem = 'inbox' | 'drafts' | 'assigned-to-me'
 
 export function Sidebar() {
@@ -62,12 +64,16 @@ export function Sidebar() {
 
         <div className="flex flex-col gap-2 relative">
           <div
-            className="absolute w-full bg-neutral-200 rounded-md z-0"
+            className="absolute w-full bg-neutral-200 rounded-md transition-all z-0"
             style={{
               top: `${highlightStyle.top}px`,
               height: `${highlightStyle.height}px`,
             }}
           />
+
+					<UiSidebarLink name="Inbox" link="/" iconName="inbox" />
+					<UiSidebarLink name="Drafts" link="/drafts" iconName="pencil" />
+					<UiSidebarLink name="Assigned to me" link="/assigned-to-me" iconName="bookmark" />
 
           <Button
             ref={inboxRef}
