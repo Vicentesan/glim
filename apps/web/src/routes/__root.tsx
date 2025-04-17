@@ -6,6 +6,8 @@ import {
 } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
 
+import { Sidebar } from '@/components/sidebar'
+
 import globalsCss from '../globals.css?url'
 
 export const Route = createRootRoute({
@@ -46,7 +48,8 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="h-screen bg-neutral-100 flex flex-row">
+        <Sidebar />
         {children}
         <Scripts />
       </body>
